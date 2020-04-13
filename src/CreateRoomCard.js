@@ -1,7 +1,6 @@
 import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 const firebase = require("firebase");
-// Required for side-effects
 require("firebase/firestore");
 
 class CreateRoomCard extends React.Component {

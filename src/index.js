@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import CreateRoomCard from './CreateRoomCard.js';
+import Game from './Game.js';
 import * as firebase from 'firebase';
 
 const firebaseConfig = {
@@ -17,6 +17,6 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig)
 
 ReactDOM.render(
-  <CreateRoomCard />,
+  <Game />,
   document.getElementById('root')
 );
