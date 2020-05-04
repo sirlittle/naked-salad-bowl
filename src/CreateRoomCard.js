@@ -1,17 +1,17 @@
 import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
+import "./css/main.css";
 const firebase = require("firebase");
 require("firebase/firestore");
 
 class CreateRoomCard extends React.Component {
-
   submitValues(values, setSubmitting) {
     console.log("pre call");
     const db = firebase.firestore();
-
     db.collection("rooms").add(values)
       .then(function(docRef) {
         console.log("Document written with ID: ", docRef.id);
+        window.location = window.location + "room/" + docRef.id;
         setSubmitting(false);
       })
       .catch(function(error) {
@@ -21,10 +21,10 @@ class CreateRoomCard extends React.Component {
 
   render() {
     return (
-      <div className="createroomcard">
-		  <div>
+      <div className="wrapper">
+		  <div className="textInputCard">
 		    <Formik
-		      initialValues={{ 'userName': '', 'roomName': ''}}
+		      initialValues={{ 'userName': '', 'roomName': '', 'password': ''}}
 		      validate={values => {
 		        const errors = {};
 		        return errors;
@@ -43,6 +43,12 @@ class CreateRoomCard extends React.Component {
 			          <Field type="text" name="roomName" />
 			          <ErrorMessage name="password" component="div" />
 		          </div>
+				  <div>
+			          <div> Room Password </div>
+			          <Field type="text" name="password" />
+			          <ErrorMessage name="password" component="div" />
+		          </div>
+
 		          <button type="submit" disabled={isSubmitting}>
 		            Submit
 		          </button>
