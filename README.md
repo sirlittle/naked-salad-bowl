@@ -1,3 +1,24 @@
+Steps to get App to Work.
+
+1. Clone Repo
+2. In the src/, run `touch firestoreConfig.js` . 
+3. Open up firestoreConfig.js and paste in a firestore config for the project. Code should look like the following in that file but with actual information:
+```
+const firestoreConfig = {
+  apiKey: "",
+  authDomain: "",
+  databaseURL: "",
+  projectId: "",
+  storageBucket: "",
+  messagingSenderId: "",
+  appId: "",
+  measurementId: ""
+};
+
+export default firestoreConfig;
+```
+4. Run npm start from within the repo and current app will be displayed.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

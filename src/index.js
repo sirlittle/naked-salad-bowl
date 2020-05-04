@@ -2,9 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Game from './Game.js';
 import * as firebase from 'firebase';
-import firebaseConfig from '../configs/firebaseConfig.js'
+import firestoreConfig from './firestoreConfig.js'
 
-firebase.initializeApp(firebaseConfig)
+firebase.initializeApp(firestoreConfig)
 
 ReactDOM.render(
   <Game />,
