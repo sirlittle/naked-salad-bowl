@@ -2,6 +2,7 @@ import React from 'react';
 import CreateRoomCard from './CreateRoomCard.js'
 import AddWordsComponent from './AddWordsComponents.js'
 import GameRoom from './GameRoom.js'
+import SplashPage from './SplashPage.js'
 import {
   BrowserRouter as Router,
   Switch,
@@ -19,11 +20,14 @@ export default class Game extends React.Component {
       <Router>
         <Switch>
           <Route exact path="/">
-        	<CreateRoomCard />
+            <SplashPage />
+          </Route>
+          <Route exact path="/create">
+            <CreateRoomCard />
           </Route>
           <Route path="/room/:id">
-          	<GameRoom />
-          </Route>	
+            <GameRoom />
+          </Route>  
           <Route path="/test">
           	<AddWordsComponent />
           </Route>

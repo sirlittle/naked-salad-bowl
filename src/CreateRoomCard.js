@@ -22,40 +22,38 @@ class CreateRoomCard extends React.Component {
   render() {
     return (
       <div className="wrapper">
-		  <div className="textInputCard">
-		    <Formik
-		      initialValues={{ 'userName': '', 'roomName': '', 'password': ''}}
-		      validate={values => {
-		        const errors = {};
-		        return errors;
-		      }}
-		      onSubmit={(values, { setSubmitting }) => (this.submitValues(values,  setSubmitting))}
-		    >
-		      { ({ isSubmitting }) => (
-		        <Form>
-		          <div>
-			       	  <div> Your Name </div>
-			          <Field type="text" name="userName" />
-			          <ErrorMessage name="email" component="div" />
-		          </div>
-		          <div>
-			          <div> Room Name </div>
-			          <Field type="text" name="roomName" />
-			          <ErrorMessage name="password" component="div" />
-		          </div>
-				  <div>
-			          <div> Room Password </div>
-			          <Field type="text" name="password" />
-			          <ErrorMessage name="password" component="div" />
-		          </div>
+          <div className="textInputCard">
+            <Formik
+              initialValues={{ 'userName': '', 'roomName': '', 'password': ''}}
+              validate={values => {
+                const errors = {};
+                return errors;
+              }}
+              onSubmit={(values, { setSubmitting }) => (this.submitValues(values,  setSubmitting))}
+            >
+              { ({ isSubmitting }) => (
+                <Form>
+                  <h1> Create a Room </h1>
+                  <div className="form-holder">
+                      <Field type="text" name="userName" placeholder="Your Name"/>
+                      <ErrorMessage name="email" component="div" />
+                  </div>
+                  <div className="form-holder">
+                      <Field type="text" name="roomName" placeholder="Room Name"/>
+                      <ErrorMessage name="password" component="div" />
+                  </div>
+                  <div className="form-holder">
+                      <Field type="text" name="password" placeholder="Password"/>
+                      <ErrorMessage name="password" component="div" />
+                  </div>
 
-		          <button type="submit" disabled={isSubmitting}>
-		            Submit
-		          </button>
-		        </Form>
-		      )}
-		    </Formik>
-		  </div>
+                  <button type="submit" disabled={isSubmitting} className="button">
+                    Submit
+                  </button>
+                </Form>
+              )}
+            </Formik>
+          </div>
       </div>
     );
   }
