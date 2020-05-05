@@ -25,7 +25,7 @@ export default class Game extends React.Component {
           	<GameRoom />
           </Route>	
           <Route path="/test">
-          	<AddWordsComponent/>
+          	<AddWordsComponent />
           </Route>
        </Switch>
 
