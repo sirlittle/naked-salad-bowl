@@ -17,7 +17,7 @@ const firestoreConfig = {
 
 export default firestoreConfig;
 ```
-4. Run npm start from within the repo and current app will be displayed.
+4. Run `npm run start` from within the repo and current app will be displayed.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
