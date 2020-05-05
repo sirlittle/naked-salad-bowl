@@ -25,3 +25,83 @@
   -o-transition: width 300ms ease-in-out, height 300ms ease-in-out;
   transition: width 300ms ease-in-out, height 300ms ease-in-out;
 }
+
+/*input {
+  outline: none;
+  margin: 20;
+  border: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  width: 100%;
+  font-size: 14px;
+  font-family: inherit;
+  position: relative;
+  margin-bottom: 32px;
+  border-bottom: 1px solid #e5e5e5;
+  text-align: center;
+}*/
+
+.form-holder {
+  padding-left: 24px;
+  position: relative;
+}
+
+input {
+    display: block;
+    width: 80%;
+    border-radius: 23.5px;
+    height: 47px;
+    padding: 0 24px;
+    color: #808080;
+    font-size: 13px;
+    border: none;
+    background: #f7f7f7;
+    margin-bottom: 25px;
+}
+
+input:focus {
+    outline: none;
+}
+
+h1 {
+    font-size: 35px;
+    text-align: center;
+    margin-bottom: 27px;
+    color: #4C8FFB;
+}
+
+.button {
+  letter-spacing: 2px;
+  border: none;
+  width: 150px;
+  height: 47px;
+  border-radius: 23.5px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background: #4C8FFB;
+  font-size: 15px;
+  color: #fff;
+  text-transform: uppercase;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  margin: 25px;
+}
+
+.button:hover {
+  border: 1px #2F5BB7 solid;
+  box-shadow: 0 1px 1px #EAEAEA, inset 0 1px 0 #5A94F1;
+  background: #3F83F1;
+}
+
+.button:focus {
+  outline: none;
+  border: 1px #2F5BB7 solid;
+  box-shadow: 0 1px 1px #EAEAEA, inset 0 1px 0 #5A94F1;
+  background: #3F83F1;
+}
+
+.inline-flex-parent {
+  display: inline-flex;
+}
