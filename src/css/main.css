@@ -13,7 +13,7 @@
   border-radius: 10px 10px 10px 10px;
   background: #fff;
   padding: 30px;
-  width: 90%;
+  width: 30%;
   max-width: 400px;
   position: relative;
   padding: 0px;
@@ -24,6 +24,31 @@
   -moz-transition: width 300ms ease-in-out, height 300ms ease-in-out;
   -o-transition: width 300ms ease-in-out, height 300ms ease-in-out;
   transition: width 300ms ease-in-out, height 300ms ease-in-out;
+}
+
+.wordsWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: center;
+  width: 100%;
+  min-height: 100%;
+  padding: 20px;
+}
+
+.wordInputCard {
+  -webkit-border-radius: 10px 10px 10px 10px;
+  border-radius: 10px 10px 10px 10px;
+  background: #fff;
+  padding: 30px;
+  width: 100%;
+  max-width: 400px;
+  padding: 0px;
+  margin: 40px;
+  justify-content: center;
+  -webkit-box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
+  text-align: center;
 }
 
 /*input {
