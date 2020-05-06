@@ -1,7 +1,6 @@
-Steps to get App to Work.
-
-1. Clone Repo
-2. In the src/, run `touch firestoreConfig.js` . 
+##  Initial Set Up
+1. Clone the repo with `git clone git@github.com:sirlittle/naked-salad-bowl.git`
+2. In `src/`, run `touch firestoreConfig.js` . 
 3. Open up firestoreConfig.js and paste in a firestore config for the project. Code should look like the following in that file but with actual information:
 ```
 const firestoreConfig = {
@@ -17,7 +16,7 @@ const firestoreConfig = {
 
 export default firestoreConfig;
 ```
-4. Run `npm run start` from within the repo and current app will be displayed.
+4. Run `npm run start` from within the repo and current app will be displayed. If you don't have React installed, run `npm install react --save` first.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
