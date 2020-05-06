@@ -26,8 +26,8 @@ class SplashPage extends React.Component {
     return (
       <div className="wrapper">
         <div className="parent inline-flex-parent">  
-          <button onClick={() => this.createGame()} className="button">Create Game</button>
-          <button onClick={() => this.joinGame()} className="button">Join Game</button>
+          <button onClick={() => this.createGame()} className="orange">Create Game</button>
+          <button onClick={() => this.joinGame()} className="blue">Join Game</button>
         </div>
         {!joinRoomClicked && <CreateRoomCard />}
         {joinRoomClicked && <JoinRoomCard />}

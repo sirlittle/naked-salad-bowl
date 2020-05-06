@@ -65,15 +65,23 @@ input:focus {
 }
 
 h1 {
-    font-size: 35px;
-    text-align: center;
-    margin-bottom: 27px;
-    color: #4C8FFB;
+  font-size: 35px;
+  text-align: center;
+  margin-bottom: 27px;
 }
 
-.button {
+h1.blue {
+  color: #4C8FFB;   
+}
+
+h1.orange {
+  color: #FDA251;
+}
+
+button {
   letter-spacing: 2px;
   border: none;
+  outline: none;
   width: 150px;
   height: 47px;
   border-radius: 23.5px;
@@ -81,7 +89,6 @@ h1 {
   align-items: center;
   justify-content: center;
   padding: 0;
-  background: #4C8FFB;
   font-size: 15px;
   color: #fff;
   text-transform: uppercase;
@@ -89,17 +96,40 @@ h1 {
   margin: 25px;
 }
 
-.button:hover {
-  border: 1px #2F5BB7 solid;
-  box-shadow: 0 1px 1px #EAEAEA, inset 0 1px 0 #5A94F1;
-  background: #3F83F1;
+button.blue {
+  background: #4C8FFB; 
 }
 
-.button:focus {
-  outline: none;
-  border: 1px #2F5BB7 solid;
-  box-shadow: 0 1px 1px #EAEAEA, inset 0 1px 0 #5A94F1;
+button.blue:hover {
   background: #3F83F1;
+  outline: none;
+  border: 2px #2F5BB7 solid;
+  box-shadow: 0 1px 1px #EAEAEA, inset 0 1px 0 #5A94F1;
+}
+
+button.blue:focus {
+  background: #3F83F1;
+  outline: none;
+  border: 2px #2F5BB7 solid;
+  box-shadow: 0 1px 1px #EAEAEA, inset 0 1px 0 #5A94F1;
+}
+
+button.orange {
+  background: #FDA251;
+}
+
+button.orange:hover {
+  background: #FD924C;
+  outline: none;
+  border: 2px #2F5BB7 solid;
+  box-shadow: 0 1px 1px #EAEAEA, inset 0 1px 0 #5A94F1;
+}
+
+button.orange:focus {
+  background: #FD924C;
+  outline: none;
+  border: 2px #2F5BB7 solid;
+  box-shadow: 0 1px 1px #EAEAEA, inset 0 1px 0 #5A94F1;
 }
 
 .inline-flex-parent {
