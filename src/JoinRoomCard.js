@@ -38,7 +38,7 @@ class JoinRoomCard extends React.Component {
             >
               { ({ isSubmitting }) => (
                 <Form>
-                  <h1 class="blue"> Join a Room </h1>
+                  <h1 className="blue"> Join a Room </h1>
                   <div className="form-holder">
                       <Field type="text" name="userName" placeholder="Your Name"/>
                       <ErrorMessage name="email" component="div" />

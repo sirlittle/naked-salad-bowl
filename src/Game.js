@@ -7,12 +7,7 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link,
-  useParams
 } from "react-router-dom";
-
-const firebase = require("firebase");
-require("firebase/firestore");
 
 export default class Game extends React.Component {
   render() {
