@@ -11,6 +11,7 @@ class SplashPage extends React.Component {
       joinRoomClicked: true,
     };
   }
+  
   createGame() {
     this.setState({ joinRoomClicked: false })
     console.log("Creating Game Card Shown");
@@ -21,11 +22,11 @@ class SplashPage extends React.Component {
     console.log("Joining Game Card Shown");
   }
 
-  render() { 
+  render() {
     var joinRoomClicked = this.state.joinRoomClicked;
     return (
       <div className="wrapper">
-        <div className="parent inline-flex-parent">  
+        <div className="parent inline-flex-parent">
           <button onClick={() => this.createGame()} className="orange">Create Game</button>
           <button onClick={() => this.joinGame()} className="blue">Join Game</button>
         </div>

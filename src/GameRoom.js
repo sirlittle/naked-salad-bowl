@@ -16,30 +16,30 @@ class GameRoom extends React.Component {
   }
 
   hideFirstPaper() {
-    this.setState({showFirstPaper : !this.state.showFirstPaper})
+    this.setState({ showFirstPaper: !this.state.showFirstPaper })
   }
 
   hideSecondPaper() {
-    this.setState({showSecondPaper : !this.state.showSecondPaper})
+    this.setState({ showSecondPaper: !this.state.showSecondPaper })
   }
 
   hideThirdPaper() {
-    this.setState({showThirdPaper : !this.state.showThirdPaper})
+    this.setState({ showThirdPaper: !this.state.showThirdPaper })
   }
 
   render() {
-      let { id } = this.props.match.params
-      let { showFirstPaper, showSecondPaper, showThirdPaper } = this.state;
-      return (
-          <div>
+    let { id } = this.props.match.params
+    let { showFirstPaper, showSecondPaper, showThirdPaper } = this.state;
+    return (
+      <div>
         <h3> ID: {id} </h3>
         <div className="wordsWrapper">
-          {showFirstPaper && <AddWordsComponent onSubmit={() => this.hideFirstPaper()}/>}
-          {showSecondPaper && <AddWordsComponent onSubmit={() => this.hideSecondPaper()}/>}
-          {showThirdPaper  && <AddWordsComponent onSubmit={() => this.hideThirdPaper()}/>}
+          {showFirstPaper && <AddWordsComponent onSubmit={() => this.hideFirstPaper()} />}
+          {showSecondPaper && <AddWordsComponent onSubmit={() => this.hideSecondPaper()} />}
+          {showThirdPaper && <AddWordsComponent onSubmit={() => this.hideThirdPaper()} />}
         </div>
       </div>
-      );
+    );
   }
 }
 

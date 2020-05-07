@@ -22,12 +22,11 @@ export default class Game extends React.Component {
           </Route>
           <Route path="/room/:id">
             <GameRoom />
-          </Route>  
-          <Route path="/test">
-          	<AddWordsComponent />
           </Route>
-       </Switch>
-
+          <Route path="/test">
+            <AddWordsComponent />
+          </Route>
+        </Switch>
       </Router>
     );
   }
