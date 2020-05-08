@@ -8,7 +8,7 @@ require("firebase/firestore");
 
 class JoinRoomCard extends React.Component {
   submitValues(values, setSubmitting) {
-    console.log("Joining Room: " + values);
+    console.log(`Joining Room: ${values}`);
     const db = firebase.firestore();
     db.collection("rooms").where("roomName", "==", values["roomName"])
       .get()
