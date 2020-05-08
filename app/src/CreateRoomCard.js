@@ -30,9 +30,7 @@ class CreateRoomCard extends React.Component {
         <div className="textInputCard">
           <Formik
             initialValues={{ 'userName': '', 'roomName': '', 'password': '' }}
-            validate={values => {
-              return {};
-            }}
+            validate={values => {}}
             onSubmit={(values, { setSubmitting }) => (this.submitValues(values, setSubmitting))}
           >
             {({ isSubmitting }) => (
