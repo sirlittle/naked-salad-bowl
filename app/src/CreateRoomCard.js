@@ -1,6 +1,7 @@
 import React from 'react';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import {ErrorMessage, Field, Form, Formik} from 'formik';
 import "./css/main.css";
+
 const firebase = require("firebase");
 const assert = require("assert")
 require("firebase/firestore");
@@ -30,8 +31,7 @@ class CreateRoomCard extends React.Component {
           <Formik
             initialValues={{ 'userName': '', 'roomName': '', 'password': '' }}
             validate={values => {
-              const errors = {};
-              return errors;
+              return {};
             }}
             onSubmit={(values, { setSubmitting }) => (this.submitValues(values, setSubmitting))}
           >
