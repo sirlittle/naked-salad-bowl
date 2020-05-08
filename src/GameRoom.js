@@ -12,6 +12,7 @@ class GameRoom extends React.Component {
       showFirstPaper: true,
       showSecondPaper: true,
       showThirdPaper: true,
+      path: window.location.pathname
     };
   }
 
@@ -28,11 +29,10 @@ class GameRoom extends React.Component {
   }
 
   render() {
-    let { id } = this.props.match.params
     let { showFirstPaper, showSecondPaper, showThirdPaper } = this.state;
     return (
       <div>
-        <h3> ID: {id} </h3>
+        <h3> ID: {this.state.path} </h3>
         <div className="wordsWrapper">
           {showFirstPaper && <AddWordsComponent onSubmit={() => this.hideFirstPaper()} />}
           {showSecondPaper && <AddWordsComponent onSubmit={() => this.hideSecondPaper()} />}

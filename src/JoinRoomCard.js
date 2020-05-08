@@ -11,11 +11,12 @@ class JoinRoomCard extends React.Component {
     const db = firebase.firestore();
     db.collection("rooms").where("roomName", "==", values["roomName"])
       .get()
-      .then(function (querySnapshot) {
+      .then((querySnapshot) => {
         assert.equal(querySnapshot.size, 1, "No room matching " + values["roomName"])
         querySnapshot.forEach(function (doc) {
-          assert.equal(values["password"], doc.data()["password"], "Incorrect password")
-          window.location = window.location + "room/" + doc.id;
+          if (values["password"].equals(doc.data()["password"])) {
+            window.location = window.location + "room/" + doc.id;
+          } // figure out what to do if password is incorrect.
         });
       })
       .catch(function (error) {
@@ -38,7 +39,7 @@ class JoinRoomCard extends React.Component {
           >
             {({ isSubmitting }) => (
               <Form>
-                <h1 className="blue"> Join a Room </h1>
+                <h1 className="blue"> Join a Game </h1>
                 <div className="form-holder">
                   <Field type="text" name="userName" placeholder="Your Name" />
                   <ErrorMessage name="email" component="div" />

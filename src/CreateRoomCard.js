@@ -9,19 +9,16 @@ class CreateRoomCard extends React.Component {
   async submitValues(values, setSubmitting) {
     console.log("Creating Room:", values);
     const db = firebase.firestore();
-    var roomCheck = db.collection("rooms").where("roomName", "==", values["roomName"])
+    db.collection("rooms").where("roomName", "==", values["roomName"])
       .get()
-      .then(function (querySnapshot) {
-        assert.equal(querySnapshot.size, 0, "Room matching " + values["roomName"] + " already exists")
-      });
-    await roomCheck;
-    db.collection("rooms").add(values)
-      .then(function (docRef) {
-        console.log("Document written with ID: ", docRef.id);
-        window.location = window.location + "room/" + docRef.id;
+      .then((querySnapshot) => {
+        assert.equal(querySnapshot.size, 0, "Room matching " + values["roomName"] + " already exists");
+        return querySnapshot;
+      }).then((querySnapshot) => {
+        console.log("Document written with ID: ");
+        window.location = window.location + "room/" + values["roomName"];
         setSubmitting(false);
-      })
-      .catch(function (error) {
+      }).catch(function (error) {
         console.error("Error adding document: ", error);
       });
   }
@@ -40,7 +37,7 @@ class CreateRoomCard extends React.Component {
           >
             {({ isSubmitting }) => (
               <Form>
-                <h1 className="orange"> Create a Room </h1>
+                <h1 className="orange"> Create a Game </h1>
                 <div className="form-holder">
                   <Field type="text" name="userName" placeholder="Your Name" />
                   <ErrorMessage name="email" component="div" />

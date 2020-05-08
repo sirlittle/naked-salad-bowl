@@ -50,7 +50,7 @@ class AddWordsComponent extends React.Component {
 
 							<button type="submit" className="blue" disabled={isSubmitting}>
 								Submit
-	          </button>
+	         				</button>
 						</Form>
 					)}
 				</Formik>
