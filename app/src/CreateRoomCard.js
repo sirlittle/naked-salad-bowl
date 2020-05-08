@@ -47,13 +47,13 @@ class CreateRoomCard extends React.Component {
                   <ErrorMessage name="password" component="div" />
                 </div>
                 <div className="form-holder">
-                  <Field type="text" name="password" placeholder="Password" />
+                  <Field type="password" name="password" placeholder="Password" />
                   <ErrorMessage name="password" component="div" />
                 </div>
 
                 <button type="submit" disabled={isSubmitting} className="orange">
                   Submit
-                  </button>
+                </button>
               </Form>
             )}
           </Formik>
