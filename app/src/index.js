@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Game from './Game.js';
 import * as firebase from 'firebase';
-import firestoreConfig from './firestoreConfig.js'
+import firestoreConfig from './config/firestoreConfig.js'
 
 firebase.initializeApp(firestoreConfig);
 

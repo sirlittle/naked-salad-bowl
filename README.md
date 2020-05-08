@@ -1,6 +1,6 @@
 ##  Initial Set Up
 1. Clone the repo with `git clone git@github.com:sirlittle/naked-salad-bowl.git`
-2. In `src/`, run `touch firestoreConfig.js` . 
+2. In `app/src/`, run `touch firestoreConfig.js` . 
 3. Open up firestoreConfig.js and paste in a firestore config for the project. Code should look like the following in that file but with actual information:
 ```
 const firestoreConfig = {
