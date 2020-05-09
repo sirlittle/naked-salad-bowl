@@ -9,13 +9,16 @@
 /coverage
 
 # configs
-firestoreConfig.js
+app/src/config/firestoreConfig.js
 
 # production
 /build
 
 # misc
 .DS_Store
+.idea/
+naked-salad-bowl.iml
+
 .env.local
 .env.development.local
 .env.test.local

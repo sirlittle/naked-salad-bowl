@@ -14,7 +14,7 @@ class AddWordsComponent extends React.Component {
 		console.log(values);
 		const db = firebase.firestore();
 		const room = "someRoom"; // Replace this with getting dynamic room ID
-		var onSubmit = this.props.onSubmit;
+		const onSubmit = this.props.onSubmit;
 		db.collection("rooms").doc(room).set(values)
 			.then(function (docRef) {
 				console.log(docRef);

@@ -7,7 +7,7 @@ import AddWordsComponent from './AddWordsComponents.js'
 
 class GameRoom extends React.Component {
   constructor() {
-    super();
+    super(); // need to add props here
     this.state = {
       showFirstPaper: true,
       showSecondPaper: true,

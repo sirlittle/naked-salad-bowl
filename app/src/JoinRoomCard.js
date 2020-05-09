@@ -1,18 +1,19 @@
 import React from 'react';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import {ErrorMessage, Field, Form, Formik} from 'formik';
 import "./css/main.css";
+
 const firebase = require("firebase");
 const assert = require("assert")
 require("firebase/firestore");
 
 class JoinRoomCard extends React.Component {
   submitValues(values, setSubmitting) {
-    console.log("Joining Room:", values)
+    console.log(`Joining Room: ${values}`);
     const db = firebase.firestore();
     db.collection("rooms").where("roomName", "==", values["roomName"])
       .get()
       .then((querySnapshot) => {
-        assert.equal(querySnapshot.size, 1, "No room matching " + values["roomName"])
+        assert.equal(querySnapshot.size, 1, "No room matching " + values["roomName"]);
         querySnapshot.forEach(function (doc) {
           if (values["password"].equals(doc.data()["password"])) {
             window.location = window.location + "room/" + doc.id;
@@ -31,10 +32,7 @@ class JoinRoomCard extends React.Component {
         <div className="textInputCard">
           <Formik
             initialValues={{ 'userName': '', 'roomName': '', 'password': '' }}
-            validate={values => {
-              const errors = {};
-              return errors;
-            }}
+            validate={values => {}}
             onSubmit={(values, { setSubmitting }) => (this.submitValues(values, setSubmitting))}
           >
             {({ isSubmitting }) => (
