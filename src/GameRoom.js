@@ -3,7 +3,8 @@ import "./css/main.css";
 import {
   withRouter
 } from "react-router-dom";
-import AddWordsComponent from './AddWordsComponents.js'
+import AddWordsComponent from './AddWordsComponents.js';
+import RoomCard from './RoomCard.js';
 
 class GameRoom extends React.Component {
   constructor() {
@@ -30,9 +31,12 @@ class GameRoom extends React.Component {
 
   render() {
     let { showFirstPaper, showSecondPaper, showThirdPaper } = this.state;
+    let room_id = this.props.match.params.id;
+    console.log(room_id)
     return (
       <div>
         <h3> ID: {this.state.path} </h3>
+        <RoomCard room_id={room_id}/>
         <div className="wordsWrapper">
           {showFirstPaper && <AddWordsComponent onSubmit={() => this.hideFirstPaper()} />}
           {showSecondPaper && <AddWordsComponent onSubmit={() => this.hideSecondPaper()} />}

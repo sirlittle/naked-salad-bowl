@@ -1,29 +1,38 @@
 import React from 'react';
 import {ErrorMessage, Field, Form, Formik} from 'formik';
 import "./css/main.css";
+import openSocket from 'socket.io-client';
 
 const firebase = require("firebase");
 const assert = require("assert")
 require("firebase/firestore");
 
 class JoinRoomCard extends React.Component {
-  submitValues(values, setSubmitting) {
+  async submitValues(values, setSubmitting) {
     console.log(`Joining Room: ${values}`);
-    const db = firebase.firestore();
-    db.collection("rooms").where("roomName", "==", values["roomName"])
-      .get()
-      .then((querySnapshot) => {
-        assert.equal(querySnapshot.size, 1, "No room matching " + values["roomName"]);
-        querySnapshot.forEach(function (doc) {
-          if (values["password"].equals(doc.data()["password"])) {
-            window.location = window.location + "room/" + doc.id;
-          } // figure out what to do if password is incorrect.
-        });
-      })
-      .catch(function (error) {
-        console.error("Error getting documents: ", error);
-      });
-    setSubmitting(false);
+    // const db = firebase.firestore();
+    // db.collection("rooms").where("roomName", "==", values["roomName"])
+    //   .get()
+    //   .then((querySnapshot) => {
+    //     assert.equal(querySnapshot.size, 1, "No room matching " + values["roomName"]);
+    //     querySnapshot.forEach(function (doc) {
+    //       if (values["password"].equals(doc.data()["password"])) {
+    //         window.location = window.location + "room/" + doc.id;
+    //       } // figure out what to do if password is incorrect.
+    //     });
+    //   })
+    //   .catch(function (error) {
+    //     console.error("Error getting documents: ", error);
+    //   });
+    // setSubmitting(false);
+    let response = await fetch(`http://localhost:5000/join_room?userName=${values['userName']}&roomName=${values['roomName']}&password=${values['password']}`);
+    let data = await response.json()
+    console.log(data)
+    if (data['response_type'] === 'SUCCESS') {
+      window.location = window.location + "room/" + data['room_name'];
+    } else if (data['response_type'] === 'JOIN_ROOM_ERROR') {
+      alert(data['error_msg']);
+    }
   }
 
   render() {

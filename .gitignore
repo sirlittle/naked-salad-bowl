@@ -9,7 +9,7 @@
 /coverage
 
 # configs
-app/src/config/firestoreConfig.js
+src/config/firestoreConfig.js
 
 # production
 /build
